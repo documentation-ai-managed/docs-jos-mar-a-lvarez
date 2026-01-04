@@ -1,0 +1,134 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to José María Álvarez's documentation platform.
+---
+
+## Recent Updates
+
+Stay informed about new features, bug fixes, and improvements in José María Álvarez's documentation platform. You receive notifications for major releases through your dashboard at `https://dashboard.example.com/notifications`.
+
+<Callout kind="info">
+  Enable email notifications in your account settings to get updates directly.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1-2-0">
+    Enhanced editing and collaboration tools.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v1-1-0">
+    Improved search and performance optimizations.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1-0-0">
+    Initial stable release with core features.
+  </Card>
+</Columns>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]} id="v1-2-0">
+
+## New Features
+
+- Added real-time collaboration for document editing with multiple users.
+- Introduced version history with diff viewer to compare changes.
+- New export options including PDF and Markdown formats.
+
+## Improvements
+
+- Optimized page load times by `>30%` for large documentation sites.
+- Enhanced mobile responsiveness for better editing on tablets.
+
+## Bug Fixes
+
+- Fixed search indexing issues causing missing results.
+- Resolved authentication errors during session timeouts.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]} id="v1-1-0">
+
+## New Features
+
+- Integrated full-text search across all documentation pages.
+- Added custom themes using your brand color `#3B82F6`.
+
+## Improvements
+
+- Streamlined sidebar navigation with collapsible sections.
+
+## Bug Fixes
+
+- Corrected image upload failures in certain browsers.
+- Patched preview rendering glitches for code blocks.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]} id="v1-0-0">
+
+## New Features
+
+- Core documentation editor with MDX support.
+- Project organization with folders and permissions.
+- API integration for automated deployments.
+
+## Breaking Changes
+
+- Updated configuration format; migrate your `docs.config.json` files.
+
+## Bug Fixes
+
+- Initial stability improvements for editor autosave.
+
+</Update>
+
+## Upgrading Your Instance
+
+Follow these steps to upgrade to the latest version safely.
+
+<Steps>
+  <Step title="Backup" icon="database">
+
+    Create a full backup of your documentation data.
+
+````bash
+docs-cli backup --project your-project-id --output ./backup-$(date +%Y%m%d)
+````
+
+  </Step>
+  <Step title="Update CLI" icon="download">
+
+    Install the latest CLI version.
+
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm install -g @jose-maria-alvarez/docs-cli@latest
+````
+````bash
+yarn global add @jose-maria-alvarez/docs-cli@latest
+````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Deploy Update" icon="rocket">
+
+    Run the upgrade command.
+
+````bash
+docs-cli upgrade --version 1.2.0 --api-key YOUR_API_KEY
+````
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Test upgrades in a staging environment first. Check the [migration guide](/migration) for version-specific instructions.
+</Callout>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+  <Expandable title="v1.3.0 Preview" default-open="true">
+    Plan to introduce AI-assisted content generation and advanced analytics. Expect beta access in November 2024.
+  </Expandable>
+  <Expandable title="Plugin System">
+    Expandable plugin architecture for custom integrations like GitHub sync.
+  </Expandable>
+</ExpandableGroup>

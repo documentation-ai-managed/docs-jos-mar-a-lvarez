@@ -1,0 +1,102 @@
+---
+title: Introduction to José María Álvarez Documentation
+description: Overview of the documentation space for organizing and managing project documentation, including key features and navigation.
+---
+
+## Overview
+
+Welcome to José María Álvarez's documentation space. You use this platform to organize, manage, and share all your project documentation in one centralized location. Create structured pages, embed code examples, and collaborate seamlessly without leaving your workflow.
+
+This space supports Markdown and MDX for rich content, including interactive components like tabs, steps, and diagrams. Start by exploring key features, then follow the quick start guide to set up your first document.
+
+## Key Features
+
+José María Álvarez Documentation offers powerful tools to streamline your workflow. Use the grid below to discover standout capabilities.
+
+<Columns cols={3}>
+  <Card title="Structured Organization" icon="layers" href="#organization">
+    Build hierarchical pages with side navigation. Nest sections and link across documents for easy access.
+  </Card>
+  <Card title="Rich Components" icon="components" href="#components">
+    Embed `<CodeGroup>`, steps, cards, and diagrams directly in MDX. No external tools required.
+  </Card>
+  <Card title="Collaboration Ready" icon="users" href="#collaboration">
+    Share spaces with teams. Version history tracks changes automatically.
+  </Card>
+</Columns>
+
+## Quick Start Guide
+
+Get up and running in minutes. Follow these steps to create your first documentation page.
+
+<Steps>
+  <Step title="Create a New Space" icon="plus">
+    Log in and select "New Documentation Space". Name it after your project, like "MyApp Docs".
+  </Step>
+  <Step title="Add Your First Page" icon="file-plus">
+    Click "New Page" and choose MDX format. Start with frontmatter for title and description.
+  </Step>
+  <Step title="Organize Content" icon="folder">
+    Use H2 headings (##) for sections. Add components like `<Callout>` for highlights.
+  </Step>
+  <Step title="Publish and Share" icon="share-2">
+    Save and generate the site. Share the public URL with your team.
+  </Step>
+</Steps>
+
+## Use Cases
+
+Tailor this documentation space to your needs. Switch tabs to see examples.
+
+<Tabs>
+  <Tab title="Personal Projects" icon="user">
+    Track your solo development work. Embed code snippets and API references for quick reference.
+
+    ```javascript
+    // Example: React component in your docs
+    function Greeting({ name }) {
+      return <div>Hello, {name}!</div>;
+    }
+    ```
+
+    Ideal for portfolios or side projects.
+  </Tab>
+  <Tab title="Team Documentation" icon="users">
+    Centralize API docs, onboarding guides, and changelogs. Use `<Update>` components for version history.
+
+    <Callout kind="tip">
+      Assign editors to specific sections for efficient collaboration.
+    </Callout>
+  </Tab>
+  <Tab title="Open Source Repos" icon="github">
+    Host READMEs, contribution guides, and examples. Link to your GitHub repo directly.
+  </Tab>
+</Tabs>
+
+## Quick Navigation
+
+Jump to essential sections or next steps.
+
+<Columns cols={2}>
+  <Card title="Advanced Editing" icon="edit-3" href="#advanced">
+    Learn MDX components and escaping rules.
+  </Card>
+  <Card title="Best Practices" icon="check-circle" href="#practices">
+    Tips for maintainable docs.
+  </Card>
+</Columns>
+
+<Expandable title="Common Questions" default-open="true">
+  **How do I add custom components?**  
+  Import them in your MDX files and use PascalCase tags like `<Columns cols={2}>`.
+
+  **What about version control?**  
+  Connect to GitHub for automatic syncing.
+
+  **Can I customize themes?**  
+  Use brand colors like `#3B82F6` in your CSS.
+</Expandable>
+
+<Callout kind="info">
+  Ready to dive deeper? Check the [Quickstart](/quickstart) guide next for hands-on examples.
+</Callout>

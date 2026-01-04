@@ -1,0 +1,136 @@
+---
+title: Getting Started
+description: Step-by-step guide to set up your account and create your first documentation project in under 5 minutes.
+---
+
+## Overview
+
+Get started with José María Álvarez in minutes. Follow these steps to create an account, set up a new documentation space, add your first page, and explore basic navigation and editing. No prior experience required—you'll have a live documentation site ready to share.
+
+<Callout kind="info">
+**Prerequisites:**
+- A valid email address
+- Modern web browser (Chrome, Firefox, Safari)
+- 5 minutes of your time
+</Callout>
+
+## Create Your Account
+
+Sign up quickly to access your documentation dashboard.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="globe">
+    Navigate to `https://app.josemariaalvarez.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, full name, and a secure password. Verify your email via the confirmation link sent to your inbox.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and sign in with your credentials. You'll land on the main workspace.
+  </Step>
+</Steps>
+
+## Create a New Documentation Space
+
+Organize your projects in dedicated spaces.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    From the dashboard, click **New Space**. Enter a name like "My Project Docs".
+  </Step>
+  <Step title="Configure Basics" icon="settings">
+    Select a brand color (e.g., `#3B82F6`) and add a description: "Welcome to my project documentation."
+  </Step>
+  <Step title="Publish Space" icon="globe">
+    Click **Create**. Your space is now live at a unique URL like `https://docs.josemariaalvarez.com/my-project`.
+  </Step>
+</Steps>
+
+## Add Your First Page
+
+Build content using simple MDX editing.
+
+<Steps>
+  <Step title="New Page" icon="file-plus">
+    In your space, click **New Page**. Title it "Introduction".
+  </Step>
+  <Step title="Edit Content" icon="edit-3">
+    Use the built-in editor to add frontmatter and body content. Here's a starter example:
+    
+    <CodeGroup tabs="Frontmatter,Body">
+    ````markdown
+    ---
+    title: Introduction
+    description: Welcome to the docs.
+    ---
+    
+    ## Hello World
+    
+    Your content starts here.
+    ````
+    ````
+    
+    ## Overview
+    
+    This is your first page.
+    
+    <Callout kind="tip">
+    Save frequently!
+    </Callout>
+    ````
+    </CodeGroup>
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Click **Preview** to see the rendered page, then **Publish**. Share the live URL.
+  </Step>
+</Steps>
+
+## Basic Navigation and Editing
+
+Master the interface for efficient workflows.
+
+<Tabs>
+  <Tab title="Navigation" icon="menu">
+    Use the sidebar for spaces, pages, and settings. Search with `<kbd>Ctrl</kbd>+<kbd>K</kbd>`. Breadcrumbs show your location.
+  </Tab>
+  <Tab title="Editing Tips" icon="edit">
+    - Switch to Markdown or Visual mode
+    - Add components like `<Callout>` via autocomplete
+    - Use version history to revert changes
+  </Tab>
+  <Tab title="Keyboard Shortcuts" icon="keyboard">
+    
+    | Action          | Shortcut       |
+    |-----------------|----------------|
+    | New Page        | `<kbd>Ctrl</kbd>+<kbd>N</kbd>` |
+    | Save            | `<kbd>Ctrl</kbd>+<kbd>S</kbd>` |
+    | Preview         | `<kbd>Ctrl</kbd>+<kbd>P</kbd>` |
+    
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Pro tip: Customize your space sidebar with pinned pages for quick access.
+</Callout>
+
+## Next Steps
+
+Explore more features to level up your documentation.
+
+<Columns cols={3}>
+  <Card title="Advanced Editing" icon="code" href="/advanced-editing">
+    Learn components, embeds, and custom themes.
+  </Card>
+  <Card title="Collaboration" icon="users" href="/collaboration">
+    Invite team members and manage permissions.
+  </Card>
+  <Card title="SEO & Analytics" icon="trending-up" href="/seo">
+    Optimize for search and track usage.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Login fails?** Check spam for verification email.
+  - **Page not publishing?** Ensure valid YAML frontmatter—no blank lines inside `---`.
+  - **Components not rendering?** Escape special characters like `{` with backticks: `{variable}`.
+</Expandable>

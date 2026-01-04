@@ -1,0 +1,151 @@
+---
+title: Integrations and Extensions
+description: Connect your documentation space with third-party tools to enhance workflow and automation.
+---
+
+## Overview
+
+Enhance your José María Álvarez documentation space by integrating it with third-party applications. You gain automation, notifications, and seamless content embedding. Start with popular app connections, set up webhooks for real-time alerts, embed external resources, and manage exports or imports efficiently.
+
+<Callout kind="tip">
+  Review your account permissions before enabling integrations to ensure secure access.
+</Callout>
+
+## Popular Third-Party Integrations
+
+Connect José María Álvarez to tools you already use. These integrations sync content, trigger automations, and streamline workflows.
+
+<Columns cols={3}>
+  <Card title="Slack" icon="message-circle" href="https://slack.com" target="_blank">
+    Receive update notifications directly in your Slack channels.
+  </Card>
+  <Card title="GitHub" icon="github" href="https://github.com" target="_blank">
+    Sync documentation changes with repository commits and pull requests.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://zapier.com" target="_blank">
+    Build no-code automations connecting to 5000+ apps.
+  </Card>
+</Columns>
+
+## Webhook Setup for Notifications
+
+Set up webhooks to receive instant notifications on events like page updates or new comments. Webhooks POST data to your endpoint at `https://your-webhook-url.com/webhook`.
+
+### Prerequisites
+Ensure your endpoint handles POST requests with JSON payloads.
+
+<Steps>
+  <Step title="Create Webhook" icon="plus">
+    Navigate to Settings > Integrations > Webhooks. Click "New Webhook".
+  </Step>
+  <Step title="Configure Endpoint">
+    Enter your URL and select events (e.g., `page.updated`, `comment.created`).
+
+    <ParamField header="X-JMA-Signature" param-type="string" required="true">
+      HMAC SHA-256 signature for payload verification.
+    </ParamField>
+  </Step>
+  <Step title="Test and Activate" icon="check-circle">
+    Send a test payload and activate the webhook.
+  </Step>
+</Steps>
+
+Verify incoming payloads with this example:
+
+<CodeGroup tabs="Node.js,Python">
+  ```javascript
+  const crypto = require('crypto');
+  const signature = req.headers['x-jma-signature'];
+  const expected = crypto.createHmac('sha256', 'YOUR_SECRET')
+    .update(JSON.stringify(req.body))
+    .digest('hex');
+  if (signature !== expected) {
+    return res.status(401).send('Invalid signature');
+  }
+  ```
+  ```python
+  import hmac
+  import hashlib
+  import json
+  from flask import request
+
+  payload = request.data
+  signature = hmac.new(
+    b'YOUR_SECRET',
+    payload,
+    hashlib.sha256
+  ).hexdigest()
+  if signature != request.headers.get('X-JMA-Signature'):
+      return 'Invalid signature', 401
+  ```
+</CodeGroup>
+
+## Embedding External Content
+
+Embed videos, forms, or dashboards from external services into your docs.
+
+<Tabs>
+  <Tab title="Iframe Embed" icon="layout">
+    Use secure iframes for simple embedding.
+
+    ```
+    <iframe
+      src="https://example.com/dashboard"
+      width="100%"
+      height="500"
+      frameborder="0">
+    </iframe>
+    ```
+
+    <Callout kind="alert">
+      Always use HTTPS sources to avoid mixed content warnings.
+    </Callout>
+  </Tab>
+  <Tab title="API-Driven Embed" icon="code">
+    Fetch and render dynamic content via API.
+
+    ```javascript
+    async function embedContent() {
+      const response = await fetch('https://api.example.com/content', {
+        headers: { Authorization: 'Bearer YOUR_TOKEN' }
+      });
+      const data = await response.json();
+      document.getElementById('embed').innerHTML = data.html;
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Export and Import Options
+
+Export your documentation for backups or migration. Supported formats include Markdown, PDF, and HTML ZIP.
+
+| Format     | Use Case                  | Includes Images |
+|------------|---------------------------|-----------------|
+| Markdown  | Git repos, static sites  | Yes            |
+| PDF       | Printing, sharing        | Yes            |
+| HTML ZIP  | Web hosting              | Yes            |
+
+<Expandable title="Advanced Import Settings" default-open="false">
+  Import from GitHub repos or Google Docs.
+
+  <Steps>
+    <Step title="Select Source">
+      Choose GitHub and authorize access.
+    </Step>
+    <Step title="Map Structure">
+      Define page hierarchy from repo folders.
+    </Step>
+  </Steps>
+</Expandable>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="API Reference" icon="book-open" href="/authentication">
+    Explore programmatic integrations.
+  </Card>
+  <Card title="Troubleshooting" icon="help-circle" href="/help-center">
+    Common integration issues and fixes.
+  </Card>
+</Columns>
